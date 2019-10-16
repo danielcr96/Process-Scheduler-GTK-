@@ -4,7 +4,6 @@
 #include "parser.h"
 #include "taylor.h"
 // GLOBAL VALUES
-int nPorc = 2;
 
 struct Proc {
 	int ready;			//1=ready ; 0=notReady
@@ -14,7 +13,7 @@ struct Proc {
 
 
 void newProc(int arrayPos){			//ingresa nuevo proceso en 
-									//el arreglo de estructuras
+						//el arreglo de estructuras
 	process[arrayPos].ready = 1;
 	process[arrayPos].currentPi = 0;
 	process[arrayPos].percentage = 0;
@@ -55,7 +54,7 @@ static void activateGTK(){
 	gtk_window_set_default_size (GTK_WINDOW (window), 300, 20);		//se le asigna un tamaño
 	gtk_window_set_title (GTK_WINDOW (window), "Estado actual del proceso");//un titulo
 	gdouble fraction = 0.0;
-	/* Here we construct the container that is going pack our buttons */
+	/* Here we construct the container that is going pack our widgets */
   	grid = gtk_grid_new ();
 
  	/* Pack the container in the window */
@@ -70,12 +69,15 @@ static void activateGTK(){
 	gtk_progress_bar_set_show_text(GTK_PROGRESS_BAR(progressBar), 100);
 	gtk_container_add(GTK_CONTAINER(window),progressBar);
 	// creacion de procesos
-	for(i = 0; i < 25; i++){
-	progressBar = gtk_progress_bar_new();	
-	gtk_grid_attach (GTK_GRID (grid), progressBar, 1, i, 1, 1);// # columna, fila , cantidad total de columnas, cantidad total de filas
-	label = gtk_label_new("P");
-	gtk_grid_attach (GTK_GRID (grid), label, 0, i, 1, 1);
-	g_timeout_add (500, fill, GTK_PROGRESS_BAR (progressBar));}
+	gchar *num_label;
+	for(i = 0; i < thread_num; i++){
+		progressBar = gtk_progress_bar_new();	
+		gtk_grid_attach (GTK_GRID (grid), progressBar, 1, i, 1, 1);// # columna, fila , cantidad total de columnas, cantidad total de filas		
+		num_label = g_strdup_printf("Process # %d", i+1);		
+		label = gtk_label_new(num_label);
+		gtk_grid_attach (GTK_GRID (grid), label, 0, i, 1, 1);
+		g_timeout_add (500, fill, GTK_PROGRESS_BAR (progressBar));
+	}
 	
 	//gtk_fixed_put(GTK_FIXED(fixed), label, 10, 54);
 	
