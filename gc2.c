@@ -94,7 +94,7 @@ gtk_main(); //inicia el loop de main()
 int main (int argc, char **argv){
     input_parser(argv[1]);
     thread_num=thread_num+1;
-    thread_num=thread_num+1;
+
     printf("Num_threads from file=%d\n", thread_num);
     printf("iteraciones=%d\n", iteraciones);
     printf("Modo from file=%d\n", modo);
