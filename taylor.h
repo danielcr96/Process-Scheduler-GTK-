@@ -15,7 +15,7 @@ int taylor(int num)
         printf("arcsin(x) doesnt exist for the given x\n");
     }
     else {
-        correct_value=asin(x);
+        correct_value=3.141592653589793238462643383279502884;
         expression = x;
         estimated_value=expression;
         for(i=1;i<k;i++)
@@ -25,9 +25,8 @@ int taylor(int num)
           estimated_value =(estimated_value + expression);
         }
 		estimated_value =estimated_value*2;
-		correct_value=correct_value*2;
         accuracy = (estimated_value/correct_value)*100;
-        printf("Teoric Value= %.9lf \nApproached Value= %.9lf \nAccuracy= %.9lf \n",estimated_value,correct_value,accuracy);
+        printf("Teoric Value= %.9lf \nApproached Value= %.15lf \nAccuracy= %.15lf \n",correct_value,estimated_value,accuracy);
     }
     return 0;
 }
