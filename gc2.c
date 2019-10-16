@@ -2,7 +2,8 @@
 #include <string.h>
 #include <gtk/gtk.h>
 #include "parser.h"
-#include "taylor.h"
+#include "tay.h"
+#include <glib.h>
 // GLOBAL VALUES
 
 // hola daniel cochino
@@ -91,12 +92,13 @@ gtk_main(); //inicia el loop de main()
 }
 
 int main (int argc, char **argv){
-	input_parser(argv[1]);
-	thread_num=thread_num+1;
+    input_parser(argv[1]);
+    thread_num=thread_num+1;
+    thread_num=thread_num+1;
     printf("Num_threads from file=%d\n", thread_num);
     printf("iteraciones=%d\n", iteraciones);
     printf("Modo from file=%d\n", modo);
-	taylor(100);
+    taylor(iteraciones);
     gtk_init(0, 0); //inicializa GTK
     activateGTK();
 
