@@ -1,0 +1,29 @@
+SCHEDULER=lottery
+MODO=Expropiativo
+Num_procesos=9
+Quantum=100
+proceso 0 carga 1000000 tp 100 pr 5 tk 100
+proceso 1 carga 1500000 tp 100 pr 1 tk 200
+proceso 2 carga 3000000 tp 200 pr 3 tk 300
+proceso 3 carga 14000090 tp 300 pr 1 tk 400
+proceso 4 carga 200000 tp 400 pr 3 tk 500
+proceso 5 carga 7000000 tp 500 pr 1 tk 600
+proceso 6 carga 8000000 tp 600 pr 3 tk 700
+proceso 7 carga 4500000 tp 700 pr 1 tk 800
+proceso 8 carga 5500000 tp 800 pr 3 tk 900
+proceso 9 carga 920000 tp 900 pr 11 tk 10
+proceso 10 carga 230000 tp 1000 pr 20 tk 10
+proceso 11 carga 11000 tp 1100 pr 20 tk 10
+proceso 12 carga 223000 tp 1200 pr 20 tk 10
+proceso 13 carga 2006600 tp 1300 pr 20 tk 10
+proceso 14 carga 0 tp 100 pr 20 tk 10
+proceso 15 carga 0 tp 100 pr 20 tk 10
+proceso 16 carga 0 tp 100 pr 20 tk 10
+proceso 17 carga 0 tp 100 pr 20 tk 10
+proceso 18 carga 0 tp 100 pr 20 tk 10
+proceso 19 carga 0 tp 100 pr 20 tk 10
+proceso 20 carga 0 tp 100 pr 20 tk 10
+proceso 21 carga 0 tp 100 pr 20 tk 10
+proceso 22 carga 0 tp 100 pr 20 tk 10
+proceso 23 carga 0 tp 100 pr 20 tk 10
+proceso 24 carga 0 tp 100 pr 20 tk 10
